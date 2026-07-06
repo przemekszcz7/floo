@@ -1,0 +1,6 @@
+{
+  "name": "DJ Wodzirej Floo",
+  "description": "Profesjonalna strona internetowa DJ/Wodzirej Floo - Sebastian Duras z Zielonej Góry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

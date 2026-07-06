@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ / Wodzirej Floo - Sebastian Duras | Zielona Góra</title>
+  <link rel="icon" type="image/jpeg" href="https://i.ibb.co/kgybdPGB/400753608-801411908662282-313807756137342148-n.jpg">
+  
+  <!-- Google Fonts: Pacifico (Neon), Montserrat (Headings), Nunito (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    /* --------------------------------------------------------------------------
+       1. VARIABLES & RESET
+       -------------------------------------------------------------------------- */
+    :root {
+      --black: #000000;
+      --dark: #0a0a0a;
+      --dark-mid: #111111;
+      --dark-card: #1a1a1a;
+      --magenta: #ff00ff;
+      --magenta-dark: #e040fb;
+      --magenta-dim: rgba(255, 0, 255, 0.15);
+      --purple: #7c3aed;
+      --gold: #ffd700;
+      --white: #ffffff;
+      --white-dim: rgba(255, 255, 255, 0.75);
+      --white-muted: rgba(255, 255, 255, 0.45);
+      --font-neon: 'Pacifico', cursive;
+      --font-headline: 'Montserrat', sans-serif;
+      --font-body: 'Nunito', sans-serif;
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* --------------------------------------------------------------------------
+       2. TYPOGRAPHY & BUTTONS
+       -------------------------------------------------------------------------- */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    /* Section Labels */
+    .section-label {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--magenta);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4.5vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 2rem;
+      line-height: 1.1;
+    }
+
+    /* Neon Elements */
+    .neon-floo {
+      font-family: var(--font-neon);
+      color: var(--white);
+      text-shadow: 
+        0 0 7px #fff, 
+        0 0 10px #fff, 
+        0 0 21px #fff, 
+        0 0 42px #fff, 
+        0 0 82px #fff, 
+        0 0 92px #fff, 
+        0 0 102px #fff, 
+        0 0 151px #fff;
+      animation: neonFlicker 4s infinite;
+      user-select: none;
+    }
+
+    .neon-text-small {
+      text-shadow: 
+        0 0 4px #fff, 
+        0 0 10px #fff, 
+        0 0 20px #fff;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2.2rem;
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-magenta {
+      background: linear-gradient(135deg, var(--magenta), var(--magenta-dark));
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(255, 0, 255, 0.4);
+    }
+
+    .btn-magenta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      transition: 0.6s;
+    }
+
+    .btn-magenta:hover::before {
+      left: 100%;
+    }
+
+    .btn-magenta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255, 0, 255, 0.6);
+    }
+
+    .btn-outline {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--magenta);
+      color: var(--magenta);
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    }
+
+    .btn-outline:hover {
+      background: var(--magenta);
+      color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: 0 0 25px rgba(255, 0, 255, 0.5);
+    }
+
+    .btn-glass {
+      background: rgba(255, 0, 255, 0.05);
+      border: 1px solid rgba(255, 0, 255, 0.3);
+      color: var(--magenta);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 4px;
+    }
+
+    .btn-glass:hover {
+      background: var(--magenta);
+      color: var(--black);
+      border-color: var(--magenta);
+      box-shadow: 0 0 25px var(--magenta);
+      transform: translateY(-3px);
+    }
+
+    /* --------------------------------------------------------------------------
+       3. DECORATIVE PATTERNS & EFFECTS
+       -------------------------------------------------------------------------- */
+    /* Scanline Texture Overlay */
+    .scanlines {
+      position: relative;
+    }
+
+    .scanlines::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, 
+        rgba(0,0,0,0.18) 0px, 
+        rgba(0,0,0,0.18) 1px, 
+        transparent 1px, 
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Dot Grid Texture */
+    .dot-grid {
+      background-image: radial-gradient(rgba(255, 0, 255, 0.04) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+
+    /* Floating Light Orbs */
+    .float-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+      z-index: 1;
+      opacity: 0.65;
+    }
+
+    .float-orb-magenta {
+      background: radial-gradient(circle, rgba(255, 0, 255, 0.15) 0%, transparent 70%);
+      width: 500px;
+      height: 400px;
+      animation: driftOrb1 15s ease-in-out infinite alternate;
+    }
+
+    .float-orb-purple {
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+      width: 450px;
+      height: 350px;
+      animation: driftOrb2 18s ease-in-out infinite alternate;
+    }
+
+    /* Glassmorphism Card Style */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 12px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .glass-card-magenta {
+      background: rgba(255, 0, 255, 0.04);
+      border: 1px solid rgba(255, 0, 255, 0.15);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 12px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    .glass-card-magenta:hover {
+      border-color: rgba(255, 0, 255, 0.45);
+      box-shadow: 0 0 35px rgba(255, 0, 255, 0.18);
+    }
+
+    /* Section Dividers */
+    .divider-gradient {
+      height: 1px;
+      width: 100%;
+      background: linear-gradient(90deg, transparent, var(--magenta), transparent);
+    }
+
+    /* Scroll Indicators */
+    .scroll-down {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-headline);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+    }
+
+    .scroll-down .mouse {
+      width: 20px;
+      height: 32px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      padding-top: 6px;
+    }
+
+    .scroll-down .wheel {
+      width: 3px;
+      height: 6px;
+      background: var(--magenta);
+      border-radius: 2px;
+      animation: scrollWheel 1.5s ease-in-out infinite;
+    }
+
+    /* --------------------------------------------------------------------------
+       4. ANIMATIONS
+       -------------------------------------------------------------------------- */
+    @keyframes neonFlicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+          0 0 7px #fff, 
+          0 0 10px #fff, 
+          0 0 21px #fff, 
+          0 0 42px #fff, 
+          0 0 82px #fff, 
+          0 0 92px #fff, 
+          0 0 102px #fff, 
+          0 0 151px #fff;
+        opacity: 1;
+      }
+      20%, 24%, 55% { 
+        text-shadow: 0 0 4px #fff, 0 0 8px #fff; 
+        opacity: 0.92; 
+      }
+    }
+
+    @keyframes driftOrb1 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.1); }
+      100% { transform: translate(-20px, 30px) scale(0.9); }
+    }
+
+    @keyframes driftOrb2 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-40px, 35px) scale(0.95); }
+      100% { transform: translate(25px, -15px) scale(1.15); }
+    }
+
+    @keyframes scrollWheel {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(8px); opacity: 0; }
+    }
+
+    /* Reveal Animations on Scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger-item {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: var(--delay, 0s);
+    }
+
+    .stagger-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --------------------------------------------------------------------------
+       5. HEADER & NAVIGATION
+       -------------------------------------------------------------------------- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 0, 255, 0.25);
+      transition: var(--transition);
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Nav Logo */
+    .nav-logo {
+      display: flex;
+      align-items: baseline;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-logo .brand-highlight {
+      font-family: var(--font-neon);
+      color: var(--white);
+      font-size: 1.55rem;
+      margin-left: 0.3rem;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    .nav-link {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.8);
+      position: relative;
+      padding: 0.3rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--magenta);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--magenta);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Mobile Hamburger Trigger */
+    .menu-trigger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 110;
+      padding: 4px;
+    }
+
+    .menu-trigger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: var(--magenta);
+      transition: var(--transition);
+    }
+
+    .menu-trigger.active span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-trigger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-trigger.active span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* --------------------------------------------------------------------------
+       6. HERO SECTION
+       -------------------------------------------------------------------------- */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem;
+      background-color: var(--black);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.85)), url('https://i.ibb.co/MxgV55Gk/476632210-1129369192533217-5209673380075756294-n.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      transform: scale(1.02);
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 3;
+      max-width: 850px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .badge-hero {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--white);
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      border: 1px solid var(--magenta);
+      padding: 6px 16px;
+      background: rgba(255, 0, 255, 0.08);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-sub-label {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero-brand {
+      font-size: clamp(4.5rem, 14vw, 11rem);
+      line-height: 0.95;
+      margin: 0.5rem 0;
+    }
+
+    .rule-hero {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--magenta), transparent);
+      margin: 0.5rem 0;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .hero-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      margin-top: 0.5rem;
+    }
+
+    .hero-rating .stars {
+      color: var(--gold);
+      font-size: 1.4rem;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-rating span {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
+      letter-spacing: 0.05em;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    /* Social Icons Row */
+    .hero-socials {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .hero-socials a {
+      color: var(--white);
+      opacity: 0.65;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .hero-socials a:hover {
+      color: var(--magenta);
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    /* --------------------------------------------------------------------------
+       7. O FLOO (ABOUT)
+       -------------------------------------------------------------------------- */
+    .about {
+      position: relative;
+      background-color: var(--dark);
+      padding: 8rem 2rem;
+      overflow: hidden;
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .about-p {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 2;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 2.5rem;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-row {
+      background: rgba(255, 0, 255, 0.03);
+      border-left: 3px solid var(--magenta);
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      transition: var(--transition);
+    }
+
+    .feature-row:hover {
+      background: rgba(255, 0, 255, 0.06);
+      transform: translateX(4px);
+    }
+
+    .feature-title {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-desc {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Stats Card (Right Column) */
+    .about-stats-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3.5rem 2.5rem;
+    }
+
+    .stats-symbol {
+      font-family: var(--font-neon);
+      font-size: 3.5rem;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-block {
+      margin: 1.5rem 0;
+      width: 100%;
+    }
+
+    .stat-num {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 0.2rem;
+    }
+
+    .stat-label-large {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--magenta);
+      line-height: 1.2;
+    }
+
+    .stats-divider {
+      width: 40px;
+      height: 1px;
+      background-color: var(--magenta);
+      margin: 0 auto;
+    }
+
+    /* --------------------------------------------------------------------------
+       8. OFERTA (SERVICES)
+       -------------------------------------------------------------------------- */
+    .services {
+      position: relative;
+      background-color: var(--dark-mid);
+      padding: 8rem 2rem;
+      overflow: hidden;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .service-card {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .service-icon-wrap {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: rgba(255, 0, 255, 0.15);
+      border: 1px solid rgba(255, 0, 255, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--magenta);
+      box-shadow: 0 0 15px rgba(255, 0, 255, 0.15);
+    }
+
+    .service-title {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--white);
+    }
+
+    .service-desc {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .service-badge {
+      font-family: var(--font-headline);
+      font-weight: 800;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--magenta);
+      border: 1px solid var(--magenta);
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-top: auto;
+    }
+
+    /* Booking CTA Strip */
+    .cta-ribbon {
+      background: linear-gradient(135deg, var(--magenta), var(--magenta-dark));
+      border-radius: 12px;
+      padding: 3rem 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      box-shadow: 0 10px 40px rgba(255, 0, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 6;
+    }
+
+    .cta-ribbon::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(0,0,0,0.08), transparent);
+      z-index: 1;
+    }
+
+    .cta-ribbon-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-ribbon-title {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 900;
+      color: var(--black);
+      line-height: 1.1;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-ribbon-subtitle {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.75);
+    }
+
+    .cta-ribbon-btn {
+      position: relative;
+      z-index: 2;
+      background-color: var(--black);
+      color: var(--white);
+      border: 1px solid var(--black);
+    }
+
+    .cta-ribbon-btn:hover {
+      background-color: transparent;
+      color: var(--black);
+      border-color: var(--black);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    /* --------------------------------------------------------------------------
+       9. GALERIA (PARTY GALLERY)
+       -------------------------------------------------------------------------- */
+    .gallery {
+      position: relative;
+      background-color: var(--black);
+      padding: 8rem 2rem;
+    }
+
+    .gallery-container {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .gallery-subtitle {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: -1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    /* CSS Grid Masonry */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 240px;
+      gap: 6px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      background-color: var(--dark-card);
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Hover States */
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 0, 255, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: var(--transition);
+      z-index: 5;
+    }
+
+    .gallery-item-note {
+      font-family: var(--font-neon);
+      font-size: 2.5rem;
+      color: var(--white);
+      text-shadow: 0 0 15px var(--white);
+      transform: translateY(15px);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .gallery-item:hover {
+      outline: 2px solid rgba(255, 0, 255, 0.85);
+      outline-offset: -2px;
+      box-shadow: 0 0 35px rgba(255, 0, 255, 0.45);
+      transform: scale(1.02);
+      z-index: 10;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item:hover .gallery-item-overlay {
+      opacity: 1;
+    }
+
+    .gallery-item:hover .gallery-item-note {
+      transform: translateY(0);
+    }
+
+    /* Masonry Custom Spans */
+    .img-p1 { grid-column: 1; grid-row: span 2; height: 486px; }
+    .img-p2 { grid-column: 2; grid-row: span 1; height: 240px; }
+    .img-p3 { grid-column: 3; grid-row: span 1; height: 240px; }
+    .img-p4 { grid-column: 4; grid-row: span 2; height: 486px; }
+    .img-p5 { grid-column: 2; grid-row: span 1; height: 240px; }
+    .img-p6 { grid-column: 3; grid-row: span 1; height: 240px; }
+    .img-p7 { grid-column: span 2; grid-row: span 2; height: 486px; }
+    .img-p8 { grid-column: 3; grid-row: span 1; height: 240px; }
+    .img-p9 { grid-column: 4; grid-row: span 1; height: 240px; }
+    .img-p10 { grid-column: 3; grid-row: span 1; height: 240px; }
+    .img-p11 { grid-column: 4; grid-row: span 1; height: 240px; }
+    .img-p12 { grid-column: 1; grid-row: span 1; height: 240px; }
+    .img-p13 { grid-column: span 2; grid-row: span 1; height: 240px; }
+
+    /* Lightbox Modal */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.96);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85vh;
+      position: relative;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 85vh;
+      object-fit: contain;
+      border: 1px solid rgba(255, 0, 255, 0.3);
+      box-shadow: 0 0 40px rgba(255, 0, 255, 0.2);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 2.2rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .lightbox-close:hover {
+      color: var(--magenta);
+    }
+
+    /* --------------------------------------------------------------------------
+       10. OPINIE (REVIEWS)
+       -------------------------------------------------------------------------- */
+    .reviews {
+      position: relative;
+      background-color: var(--dark);
+      padding: 8rem 2rem;
+      overflow: hidden;
+    }
+
+    .reviews-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .reviews-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .review-card {
+      padding: 3.5rem 4rem;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(255, 0, 255, 0.05);
+    }
+
+    .review-stars {
+      color: var(--gold);
+      font-size: 1.3rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+
+    .review-quote-icon {
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-family: var(--font-neon);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--magenta);
+      opacity: 0.12;
+      pointer-events: none;
+    }
+
+    .review-text {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--white);
+      margin-bottom: 1.8rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .review-author {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .reviews-more-wrap {
+      text-align: center;
+    }
+
+    /* --------------------------------------------------------------------------
+       11. KONTAKT (CONTACT)
+       -------------------------------------------------------------------------- */
+    .contact {
+      position: relative;
+      background-color: var(--black);
+      padding: 8rem 2rem;
+      overflow: hidden;
+    }
+
+    .contact-container {
+      max-width: 750px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    .contact-card {
+      padding: 4.5rem 3.5rem;
+      margin-top: 2rem;
+    }
+
+    .contact-brand {
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-subtitle {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 2.2rem;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .contact-symbol {
+      font-family: var(--font-neon);
+      font-size: 2.8rem;
+      color: var(--magenta);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-phone {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: clamp(2rem, 7vw, 4.2rem);
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      display: inline-block;
+      margin-bottom: 2rem;
+      transition: var(--transition);
+    }
+
+    .contact-phone:hover {
+      color: var(--magenta);
+      text-shadow: 
+        0 0 10px #fff, 
+        0 0 20px var(--magenta), 
+        0 0 40px var(--magenta);
+      transform: scale(1.02);
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-email {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.75);
+      transition: var(--transition);
+    }
+
+    .contact-email:hover {
+      color: var(--magenta);
+    }
+
+    .contact-location {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-social-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-social {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 1.8rem;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+
+    .btn-facebook {
+      background-color: #1877f2;
+      color: var(--white);
+    }
+
+    .btn-facebook:hover {
+      background-color: #166fe5;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(24, 119, 242, 0.4);
+    }
+
+    .btn-tiktok {
+      background-color: var(--black);
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
+
+    .btn-tiktok:hover {
+      background-color: var(--white);
+      color: var(--black);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(255, 255, 255, 0.25);
+    }
+
+    /* --------------------------------------------------------------------------
+       12. FOOTER
+       -------------------------------------------------------------------------- */
+    .footer {
+      background-color: var(--black);
+      padding: 5rem 2rem 3.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .footer-brand {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+
+    .footer-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .footer-meta-label {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.45);
+      letter-spacing: 0.08em;
+    }
+
+    .footer-meta-contact {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-socials a {
+      color: var(--magenta);
+      opacity: 0.6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .footer-socials a:hover {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+
+    .footer-copyright {
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.2);
+      margin-top: 1.5rem;
+    }
+
+    /* --------------------------------------------------------------------------
+       13. RESPONSIVE MEDIA QUERIES
+       -------------------------------------------------------------------------- */
+    @media (max-width: 1024px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .about-stats-card {
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 240px;
+      }
+
+      .gallery-item {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: 240px !important;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-ribbon {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar-container {
+        padding: 0.9rem 1.5rem;
+      }
+
+      .menu-trigger {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--black);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        z-index: 90;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+        letter-spacing: 0.2em;
+      }
+
+      .hero {
+        padding: 7rem 1.5rem;
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .about {
+        padding: 6rem 1.5rem;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        padding: 6rem 1.5rem;
+      }
+
+      .service-card {
+        padding: 1.8rem;
+      }
+
+      .gallery {
+        padding: 6rem 1.5rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews {
+        padding: 6rem 1.5rem;
+      }
+
+      .review-card {
+        padding: 2rem 1.8rem;
+      }
+
+      .contact {
+        padding: 6rem 1.5rem;
+      }
+
+      .contact-card {
+        padding: 2.5rem 1.5rem;
+      }
+
+      .contact-social-row {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .btn-social {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    /* --------------------------------------------------------------------------
+       14. ACCESSIBILITY & MOTION PREFERENCES
+       -------------------------------------------------------------------------- */
+    @media (prefers-reduced-motion: reduce) {
+      .neon-floo, .flicker, .float-orb, .reveal, .stagger-item, .hero-bg, .gallery-item img {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .stagger-item {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      * {
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body class="scanlines">
+
+  <!-- --------------------------------------------------------------------------
+       BACKGROUND ELEMENTS
+       -------------------------------------------------------------------------- -->
+  <div class="float-orb float-orb-magenta" style="top: 10%; left: -5%;"></div>
+  <div class="float-orb float-orb-purple" style="top: 55%; right: -5%;"></div>
+  <div class="float-orb float-orb-magenta" style="bottom: 5%; left: 10%;"></div>
+
+  <!-- --------------------------------------------------------------------------
+       NAVBAR
+       -------------------------------------------------------------------------- -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="nav-logo" id="logo-trigger">
+        DJ/WODZIREJ<span class="brand-highlight">Floo</span>
+      </a>
+      
+      <button class="menu-trigger" id="menu-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#o-mnie" class="nav-link">O mnie</a></li>
+        <li><a href="#oferta" class="nav-link">Oferta</a></li>
+        <li><a href="#galeria" class="nav-link">Galeria</a></li>
+        <li><a href="#opinie" class="nav-link">Opinie</a></li>
+        <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- --------------------------------------------------------------------------
+       1. HERO SECTION
+       -------------------------------------------------------------------------- -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    
+    <div class="hero-container">
+      <span class="badge-hero">POGOTOWIE IMPREZOWE · ZIELONA GÓRA</span>
+      <span class="hero-sub-label">DJ / WODZIREJ</span>
+      
+      <h1 class="hero-brand neon-floo">Floo</h1>
+      
+      <div class="rule-hero"></div>
+      
+      <p class="hero-tagline">Rozkręcimy Wasze wesele do białego rana.</p>
+      
+      <div class="hero-rating">
+        <div class="stars">★★★★★</div>
+        <span>Ponad 200 szczęśliwych par</span>
+      </div>
+      
+      <div class="hero-cta">
+        <a href="tel:781299599" class="btn btn-magenta">Zadzwoń: 781 299 599</a>
+        <a href="mailto:djfloo@wp.pl" class="btn btn-outline">Napisz: djfloo@wp.pl</a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://www.facebook.com/djsebastiandurasfloo/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@sebastianduras" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.19 8.19 0 004.79 1.54V7.12a4.85 4.85 0 01-1.02-.43z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-down">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>W dół</span>
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------------------------
+       2. O FLOO (ABOUT)
+       -------------------------------------------------------------------------- -->
+  <section class="about dot-grid" id="o-nie">
+    <div class="about-container">
+      
+      <div class="about-text reveal">
+        <span class="section-label">KIM JESTEM</span>
+        <h2 class="section-title">Sebastian Duras</h2>
+        <div class="neon-floo neon-text-small" style="font-size: 1.8rem; margin-top: -1.5rem; margin-bottom: 1.5rem;">Floo</div>
+        
+        <p class="about-p">
+          Jestem Sebastianem Durasem — DJ i wodzirej znany jako Floo. Specjalizuję się w prowadzeniu wesel, które goście zapamiętują na całe życie. Działam z Zielonej Góry, obsługując imprezy w całym regionie. Moje podejście jest proste: pełne zaangażowanie, doskonała muzyka, pomysłowe konkursy i prawdziwa radość z tego, co robię.
+        </p>
+
+        <div class="about-features stagger-container">
+          <div class="feature-row stagger-item">
+            <div class="feature-title">🎵 DJ + Wodzirej w jednym</div>
+            <div class="feature-desc">Muzyka i prowadzenie — kompleksowo.</div>
+          </div>
+          <div class="feature-row stagger-item">
+            <div class="feature-title">🎤 Piękny głos, wielki talent</div>
+            <div class="feature-desc">Wodzirejostwo na najwyższym poziomie.</div>
+          </div>
+          <div class="feature-row stagger-item">
+            <div class="feature-title">🎊 Pomysłowe konkursy</div>
+            <div class="feature-desc">Integracja gości, zabawy, niespodzianki.</div>
+          </div>
+          <div class="feature-row stagger-item">
+            <div class="feature-title">♾️ Zabawa do białego rana</div>
+            <div class="feature-desc">Energia przez całą noc, gwarantowana.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats reveal">
+        <div class="glass-card-magenta about-stats-card">
+          <div class="stats-symbol neon-floo">♪</div>
+          
+          <div class="stat-block">
+            <div class="stat-num">WESELA</div>
+            <div class="stat-label">Poprowadzone z pasją</div>
+          </div>
+          
+          <div class="stats-divider"></div>
+          
+          <div class="stat-block">
+            <div class="stat-label-large">ZIELONA GÓRA</div>
+            <div class="stat-label">i cały region</div>
+          </div>
+          
+          <div class="stats-divider"></div>
+          
+          <div class="stat-block">
+            <div class="review-stars" style="margin-bottom: 0.2rem;">★★★★★</div>
+            <div class="stat-label">Ocena 5/5 na Facebooku</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider-gradient"></div>
+
+  <!-- --------------------------------------------------------------------------
+       3. OFERTA (SERVICES)
+       -------------------------------------------------------------------------- -->
+  <section class="services" id="oferta">
+    <div class="services-container">
+      
+      <div class="services-header reveal">
+        <span class="section-label">OFERTA</span>
+        <h2 class="section-title">Co dostajesz</h2>
+      </div>
+
+      <div class="services-grid stagger-container">
+        
+        <!-- Card 1 -->
+        <div class="glass-card service-card stagger-item">
+          <div class="service-icon-wrap">🎧</div>
+          <h3 class="service-title">DJ — Muzyka</h3>
+          <p class="service-desc">
+            Bogata biblioteka muzyczna — od romantyków po parkiet. Dostosowuję playlistę do charakteru Waszego wesela.
+          </p>
+          <span class="service-badge">LIVE MIX</span>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card service-card stagger-item">
+          <div class="service-icon-wrap">🎤</div>
+          <h3 class="service-title">Wodzirej</h3>
+          <p class="service-desc">
+            Prowadzenie ceremonii weselnych z klasą, humorem i energią. Piękny głos, świetny kontakt z gośćmi.
+          </p>
+          <span class="service-badge">PROFESJONALIZM</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card service-card stagger-item">
+          <div class="service-icon-wrap">🎊</div>
+          <h3 class="service-title">Konkursy i zabawy</h3>
+          <p class="service-desc">
+            Pomysłowe gry i zabawy, które integrują gości i tworzą niezapomnianą atmosferę. Każde wesele inne!
+          </p>
+          <span class="service-badge">UNIKALNE</span>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="glass-card service-card stagger-item">
+          <div class="service-icon-wrap">🌙</div>
+          <h3 class="service-title">Do białego rana</h3>
+          <p class="service-desc">
+            Energia i zaangażowanie przez całą noc. Wesela, które trwają dłużej niż planowano — bo nikt nie chce kończyć.
+          </p>
+          <span class="service-badge">GWARANCJA</span>
+        </div>
+
+      </div>
+
+      <!-- Booking Strip CTA -->
+      <div class="cta-ribbon reveal">
+        <div class="cta-ribbon-text">
+          <h3 class="cta-ribbon-title">Twoje wesele czeka na Floo!</h3>
+          <p class="cta-ribbon-subtitle">Zadzwoń i sprawdź dostępność</p>
+        </div>
+        <a href="tel:781299599" class="btn btn-magenta cta-ribbon-btn">781 299 599</a>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider-gradient"></div>
+
+  <!-- --------------------------------------------------------------------------
+       4. GALERIA (PARTY GALLERY)
+       -------------------------------------------------------------------------- -->
+  <section class="gallery" id="galeria">
+    <div class="gallery-container">
+      
+      <div class="gallery-header reveal">
+        <span class="section-label">GALERIA</span>
+        <h2 class="section-title" style="margin-bottom: 1rem;">Imprezy, które prowadziłem</h2>
+        <p class="gallery-subtitle">Każde wesele to inna historia. Każda noc — niezapomniana.</p>
+      </div>
+
+      <!-- Masonry Photo Grid -->
+      <div class="gallery-grid stagger-container">
+        
+        <div class="gallery-item img-p1 stagger-item" data-src="https://i.ibb.co/gFdRgPtr/488195460-1171552021648267-6887578844184097758-n.jpg">
+          <img src="https://i.ibb.co/gFdRgPtr/488195460-1171552021648267-6887578844184097758-n.jpg" alt="Zabawa weselna 1" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p2 stagger-item" data-src="https://i.ibb.co/7dqC9vkf/488220682-1172713978198738-978902213545347018-n.jpg">
+          <img src="https://i.ibb.co/7dqC9vkf/488220682-1172713978198738-978902213545347018-n.jpg" alt="Zabawa weselna 2" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p3 stagger-item" data-src="https://i.ibb.co/PZqnw23n/487826713-1172713954865407-5519635392460207325-n.jpg">
+          <img src="https://i.ibb.co/PZqnw23n/487826713-1172713954865407-5519635392460207325-n.jpg" alt="Zabawa weselna 3" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p4 stagger-item" data-src="https://i.ibb.co/sdtfDDV0/487709913-1172714024865400-4315325562328554199-n.jpg">
+          <img src="https://i.ibb.co/sdtfDDV0/487709913-1172714024865400-4315325562328554199-n.jpg" alt="Zabawa weselna 4" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p5 stagger-item" data-src="https://i.ibb.co/jvyztRdq/488033367-1172713924865410-2339256101929553600-n.jpg">
+          <img src="https://i.ibb.co/jvyztRdq/488033367-1172713924865410-2339256101929553600-n.jpg" alt="Zabawa weselna 5" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p6 stagger-item" data-src="https://i.ibb.co/KcvmCT9m/488667769-1176817021121767-6594030358948944273-n.jpg">
+          <img src="https://i.ibb.co/KcvmCT9m/488667769-1176817021121767-6594030358948944273-n.jpg" alt="Zabawa weselna 6" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p7 stagger-item" data-src="https://i.ibb.co/DDZKFfsM/492214409-1192904552846347-6651565869254146141-n.jpg">
+          <img src="https://i.ibb.co/DDZKFfsM/492214409-1192904552846347-6651565869254146141-n.jpg" alt="Zabawa weselna 7" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p8 stagger-item" data-src="https://i.ibb.co/tw84zH9h/492040940-1192904856179650-5259169727940160937-n.jpg">
+          <img src="https://i.ibb.co/tw84zH9h/492040940-1192904856179650-5259169727940160937-n.jpg" alt="Zabawa weselna 8" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p9 stagger-item" data-src="https://i.ibb.co/Dfs1Fjfx/492224042-1192904849512984-3183638798604998859-n.jpg">
+          <img src="https://i.ibb.co/Dfs1Fjfx/492224042-1192904849512984-3183638798604998859-n.jpg" alt="Zabawa weselna 9" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p10 stagger-item" data-src="https://i.ibb.co/DDTV8jM4/492202077-1192904526179683-7511509903500000483-n.jpg">
+          <img src="https://i.ibb.co/DDTV8jM4/492202077-1192904526179683-7511509903500000483-n.jpg" alt="Zabawa weselna 10" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p11 stagger-item" data-src="https://i.ibb.co/WbdtFBj/492510274-1192904832846319-500864521958155235-n.jpg">
+          <img src="https://i.ibb.co/WbdtFBj/492510274-1192904832846319-500864521958155235-n.jpg" alt="Zabawa weselna 11" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p12 stagger-item" data-src="https://i.ibb.co/LdNJv4LT/492520622-1192904509513018-3237029956254190310-n.jpg">
+          <img src="https://i.ibb.co/LdNJv4LT/492520622-1192904509513018-3237029956254190310-n.jpg" alt="Zabawa weselna 12" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+        <div class="gallery-item img-p13 stagger-item" data-src="https://i.ibb.co/MxgV55Gk/476632210-1129369192533217-5209673380075756294-n.jpg">
+          <img src="https://i.ibb.co/MxgV55Gk/476632210-1129369192533217-5209673380075756294-n.jpg" alt="Zabawa weselna 13" referrerpolicy="no-referrer">
+          <div class="gallery-item-overlay">
+            <span class="gallery-item-note">♪</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider-gradient"></div>
+
+  <!-- --------------------------------------------------------------------------
+       5. OPINIE (REVIEWS)
+       -------------------------------------------------------------------------- -->
+  <section class="reviews dot-grid" id="opinie">
+    <div class="reviews-container">
+      
+      <div class="reviews-header reveal">
+        <span class="section-label">OPINIE WESELNIKÓW</span>
+        <h2 class="section-title">Co mówią Pary Młode</h2>
+        <p class="gallery-subtitle" style="margin-top: -1.5rem;">Prawdziwe słowa — prawdziwe emocje.</p>
+      </div>
+
+      <div class="reviews-stack stagger-container">
+        
+        <!-- Review 1 -->
+        <div class="glass-card-magenta review-card stagger-item">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote-icon">“</div>
+          <p class="review-text">
+            Najlepsze wesele na jakim byliśmy i uwaga to było nasze wesele! A to wszystko dzięki wspaniałemu DJ/wodzirej Floo. Pomysłowy z pięknym głosem, świetnymi konkursami. Można by tak pisać i pisać. Polecamy z całego serca, rozkręci każdą imprezę do białego rana !!!! Dziękujemy jeszcze raz 🤗
+          </p>
+          <div class="review-author">— Para Młoda · Opinia z Facebooka</div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="glass-card-magenta review-card stagger-item">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote-icon">“</div>
+          <p class="review-text">
+            To jak bardzo polecamy Sebastiana na prowadzenie Waszego wesela jest nie do opisania! On jest genialny. Zadowolenie Naszych gości było dla Nas najważniejsze. Było tak super, że musieliśmy przedłużyć naszą imprezę, ponieważ każdy chciał więcej i więcej. My bardzo, bardzo dziękujemy!! Za wszystko, za profesjonalizm, cierpliwość i za to, że mogliśmy na Ciebie liczyć. Było EKSTRA! Mam nadzieję do zobaczenia 🏻
+          </p>
+          <div class="review-author">— Para Młoda · Opinia z Facebooka</div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="glass-card-magenta review-card stagger-item">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-quote-icon">“</div>
+          <p class="review-text">
+            Z czystym sumieniem polecam Sebastiana. Sposób w jaki prowadził zabawę weselną jest nie do opisania. Cudowna atmosfera. Magiczna integracja gości. Ciekawe układy. Pomysły które zaskakiwały gości i Parę Młodą. Wspaniały kontakt i otwartość na sugestię Młodych. Można by tak bez końca wymieniać jego zalety. Jeśli szukacie osoby która zapewni wam ciągłą zabawę to idealnym wyborem jest właśnie Sebastian. Dziękuję bardzo za wszystko!!! Jesteś wspaniały!
+          </p>
+          <div class="review-author">— Para Młoda · Opinia z Facebooka</div>
+        </div>
+
+      </div>
+
+      <div class="reviews-more-wrap reveal">
+        <a href="https://www.facebook.com/djsebastiandurasfloo/reviews/?id=100063804390007&sk=reviews" target="_blank" rel="noopener" class="btn btn-glass">Więcej opinii na Facebooku →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider-gradient"></div>
+
+  <!-- --------------------------------------------------------------------------
+       6. KONTAKT (CONTACT)
+       -------------------------------------------------------------------------- -->
+  <section class="contact" id="kontakt">
+    <div class="contact-container">
+      
+      <span class="section-label reveal">KONTAKT</span>
+      
+      <div class="glass-card-magenta contact-card reveal">
+        <div class="contact-symbol neon-floo">♪</div>
+        <div class="contact-brand neon-floo neon-text-small">Floo</div>
+        <h2 class="contact-subtitle">Zadzwoń do mnie</h2>
+        
+        <a href="tel:781299599" class="contact-phone">781 299 599</a>
+        
+        <div class="contact-details">
+          <a href="mailto:djfloo@wp.pl" class="contact-email">djfloo@wp.pl</a>
+          <span class="contact-location">📍 Zielona Góra i okolice</span>
+        </div>
+
+        <div class="contact-social-row">
+          <a href="https://www.facebook.com/djsebastiandurasfloo/" target="_blank" rel="noopener" class="btn-social btn-facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+            </svg>
+            Facebook
+          </a>
+          <a href="https://www.tiktok.com/@sebastianduras" target="_blank" rel="noopener" class="btn-social btn-tiktok">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.19 8.19 0 004.79 1.54V7.12a4.85 4.85 0 01-1.02-.43z"/>
+            </svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- --------------------------------------------------------------------------
+       12. FOOTER
+       -------------------------------------------------------------------------- -->
+  <footer class="footer">
+    <div class="divider-gradient" style="position: absolute; top: 0; left: 0;"></div>
+    
+    <div class="footer-container">
+      <div class="footer-brand neon-floo neon-text-small" style="font-size: 2.5rem;">Floo</div>
+      
+      <div class="footer-meta">
+        <span class="footer-meta-label">DJ / WODZIREJ · ZIELONA GÓRA</span>
+        <span class="footer-meta-contact">781 299 599 · djfloo@wp.pl</span>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/djsebastiandurasfloo/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z"/>
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@sebastianduras" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.02a8.19 8.19 0 004.79 1.54V7.12a4.85 4.85 0 01-1.02-.43z"/>
+          </svg>
+        </a>
+      </div>
+
+      <span class="footer-copyright">© 2026 DJ/Wodzirej Floo — Sebastian Duras | Zielona Góra. Wszystkie prawa zastrzeżone.</span>
+    </div>
+  </footer>
+
+  <!-- --------------------------------------------------------------------------
+       LIGHTBOX MODAL
+       -------------------------------------------------------------------------- -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Zamknij">&times;</button>
+      <img src="" alt="Powiększone zdjęcie" class="lightbox-img" id="lightbox-img" referrerpolicy="no-referrer">
+    </div>
+  </div>
+
+  <!-- --------------------------------------------------------------------------
+       VANILLA JAVASCRIPT
+       -------------------------------------------------------------------------- -->
+  <script>
+    // Mobile Navigation Menu Toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (menuBtn && navMenu) {
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    }
+
+    // Smooth Scrolling & Navbar Active State highlight on scroll
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.style.boxShadow = '0 2px 30px rgba(255, 0, 255, 0.18)';
+        navbar.style.background = 'rgba(0, 0, 0, 0.96)';
+      } else {
+        navbar.style.boxShadow = 'none';
+        navbar.style.background = 'rgba(0, 0, 0, 0.92)';
+      }
+    });
+
+    // Lightbox Functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.getAttribute('data-src');
+        if (lightboxImg && lightbox) {
+          lightboxImg.src = imgSrc;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Lock background scrolling
+        }
+      });
+    });
+
+    if (lightboxClose && lightbox) {
+      lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = ''; // Unlock scrolling
+      });
+
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Scroll Reveal IntersectionObserver
+    const revealOptions = {
+      threshold: 0.12,
+      rootMargin: "0px 0px -60px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          
+          // If it is a stagger container, trigger child delays
+          if (entry.target.classList.contains('stagger-container')) {
+            const items = entry.target.querySelectorAll('.stagger-item');
+            items.forEach((item, index) => {
+              item.style.setProperty('--delay', `${index * 0.09}s`);
+              item.classList.add('revealed');
+            });
+          }
+          
+          observer.unobserve(entry.target);
+        }
+      });
+    }, revealOptions);
+
+    document.querySelectorAll('.reveal, .stagger-container').forEach(el => {
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
