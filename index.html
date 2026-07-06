@@ -41,13 +41,18 @@
       scroll-behavior: smooth;
     }
 
+    html, body {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100%;
+    }
+
     body {
       background-color: var(--black);
       color: var(--white);
       font-family: var(--font-body);
       font-weight: 300;
       line-height: 1.8;
-      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -204,6 +209,13 @@
       );
       pointer-events: none;
       z-index: 2;
+    }
+
+    /* App Wrapper to clip horizontal overflows on mobile */
+    .app-wrapper {
+      position: relative;
+      width: 100%;
+      overflow-x: hidden;
     }
 
     /* Dot Grid Texture */
@@ -1399,6 +1411,21 @@
         padding: 7rem 1.5rem;
       }
 
+      .badge-hero {
+        font-size: 0.58rem;
+        letter-spacing: 0.2em;
+        padding: 6px 12px;
+        white-space: normal;
+        text-align: center;
+        max-width: 100%;
+        line-height: 1.4;
+      }
+
+      .hero-sub-label {
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+      }
+
       .hero-cta {
         flex-direction: column;
         width: 100%;
@@ -1423,6 +1450,10 @@
 
       .service-card {
         padding: 1.8rem;
+      }
+
+      .cta-ribbon {
+        padding: 2.2rem 1.5rem;
       }
 
       .gallery {
@@ -1486,6 +1517,7 @@
   </style>
 </head>
 <body class="scanlines">
+<div class="app-wrapper">
 
   <!-- --------------------------------------------------------------------------
        BACKGROUND ELEMENTS
@@ -1938,6 +1970,7 @@
       <span class="footer-copyright">© 2026 DJ/Wodzirej Floo — Sebastian Duras | Zielona Góra. Wszystkie prawa zastrzeżone.</span>
     </div>
   </footer>
+</div>
 
   <!-- --------------------------------------------------------------------------
        LIGHTBOX MODAL
