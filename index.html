@@ -198,7 +198,7 @@
 
     .scanlines::after {
       content: '';
-      position: absolute;
+      position: fixed;
       inset: 0;
       background: repeating-linear-gradient(
         0deg, 
@@ -232,6 +232,8 @@
       filter: blur(80px);
       z-index: 1;
       opacity: 0.65;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
     }
 
     .float-orb-magenta {
@@ -398,6 +400,11 @@
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(255, 0, 255, 0.25);
       transition: var(--transition);
+    }
+
+    .navbar.scrolled {
+      box-shadow: 0 2px 30px rgba(255, 0, 255, 0.18);
+      background: rgba(0, 0, 0, 0.96);
     }
 
     .navbar-container {
@@ -2007,15 +2014,18 @@
 
     // Smooth Scrolling & Navbar Active State highlight on scroll
     const navbar = document.querySelector('.navbar');
+    let isScrolled = false;
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.style.boxShadow = '0 2px 30px rgba(255, 0, 255, 0.18)';
-        navbar.style.background = 'rgba(0, 0, 0, 0.96)';
-      } else {
-        navbar.style.boxShadow = 'none';
-        navbar.style.background = 'rgba(0, 0, 0, 0.92)';
+      const scrolled = window.scrollY > 50;
+      if (scrolled !== isScrolled) {
+        isScrolled = scrolled;
+        if (scrolled) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
       }
-    });
+    }, { passive: true });
 
     // Lightbox Functionality
     const lightbox = document.getElementById('lightbox');
